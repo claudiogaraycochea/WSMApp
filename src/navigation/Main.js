@@ -10,6 +10,12 @@ export default function Main(props) {
 
   return (
     <>
+      <NavigationPrivate props={props}/>
+    </>
+  )
+
+  return (
+    <>
       {isLoggedIn ? (<NavigationPrivate props={props}/>):(<NavigatorPublic props={props}/>)}
     </>
   )

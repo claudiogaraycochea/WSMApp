@@ -9,9 +9,14 @@ export default function HomeMenu(props){
   const { menu } = useSelector(state => state.menuConstructor);
   const dispatch = useDispatch();
 
-  function handleChooseSubmenu(menu_id) {
-    dispatch(setMenuId(menu_id));
-    navigation.navigate('Submenu');
+  function handleChooseMenu(menu_id) {
+    const menu_parent = menu.find((menuItem) => menuItem.id === menu_id);
+    console.log('handleChooseMenu: menu_selected:', menu_parent);
+    const menu_child = menu_parent.menu;
+    const params = {
+      menu_selected: menu_child
+    };
+    navigation.navigate('Menu', params);
   }
 
   return (
@@ -25,7 +30,7 @@ export default function HomeMenu(props){
             <ButtonItem
               key={menu_item.id}
               icon={<Icon.IconSurvey/>}
-              onPress={() => handleChooseSubmenu(menu_item.id)}
+              onPress={() => handleChooseMenu(menu_item.id)}
               iconAction={<Icon.IconNext/>}
             >
               {menu_item.title}

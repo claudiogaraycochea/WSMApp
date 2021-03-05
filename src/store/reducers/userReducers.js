@@ -1,6 +1,8 @@
 const initialState = {
   auth: {},
-  user: {},
+  user: {
+    role: 'company'
+  },
   firstname: 'Nombre1',
   user: {},
   users: [

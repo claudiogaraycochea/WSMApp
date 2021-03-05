@@ -33,7 +33,7 @@ export default function Home(props) {
     }
   }
   console.log('Home: company_own: ',company_own);
-
+  return <HomeMenu {...props} />
   if (user.role==='customer') {
     return <SearchCompany {...props} />
   }
