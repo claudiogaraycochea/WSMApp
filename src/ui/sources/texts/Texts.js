@@ -13,14 +13,16 @@ export const H1 = styled.Text`
   font-weight: bold;
   text-align: center;
   flex: 1;
+  text-transform: uppercase;
 `;
 
 export const H2 = styled.Text`
-  font-size: 30px;
+  font-size: 26px;
   padding-bottom: 5px;
   text-align: center;
   flex: 1;
   font-weight: bold;
+  text-transform: uppercase;
 `;
 
 export const H3 = styled.Text`
@@ -28,4 +30,5 @@ export const H3 = styled.Text`
   text-align: center;
   flex: 1;
   font-weight: bold;
+  text-transform: uppercase;
 `;

@@ -5,7 +5,7 @@ import { Container, Row, Col, Input, Button, H2, H3, ButtonItems, ButtonItem, Ic
 
 export default function Menu(props){
   const { navigation, route } = props;
-  const menu_selected = route.params.menu_selected;
+  const { menu_selected, prev_title } = route.params;
 
   function handleChooseMenu(menu_id) {
     const menu_parent = menu_selected.find((menuItem) => menuItem.id === menu_id);
@@ -19,7 +19,8 @@ export default function Menu(props){
     else {
       const menu_child = menu_parent.menu;
       const params = {
-        menu_selected: menu_child
+        menu_selected: menu_child,
+        prev_title: menu_parent.title
       };
       navigation.push('Menu', params);
       // navigation.navigate('Menu', params);      
@@ -29,7 +30,7 @@ export default function Menu(props){
   return (
     <Container>
       <Row>
-        <H3>MENU</H3>
+        <H2>MENU {prev_title}</H2>
       </Row>
       <View>
         {menu_selected.map((menu_item) => {
