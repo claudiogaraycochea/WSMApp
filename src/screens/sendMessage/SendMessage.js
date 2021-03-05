@@ -13,13 +13,14 @@ import {
 } from '../../ui/UILib';
 
 export default function SendMessage(props) {
-  const { navigation } = props;
+  const { navigation, route } = props;
+  const { data_selected } = route.params;
 
   return (
     <Container>
       <Row type='divisor'>
         <Col align='flex-start'>
-          <H3>Send to Firstname Lastname</H3>
+          <H3>Send to {data_selected.firstname} {data_selected.lastname}</H3>
         </Col>
       </Row>
       <Row>

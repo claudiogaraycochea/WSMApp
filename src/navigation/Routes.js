@@ -12,7 +12,7 @@ import Home from '../screens/home/Home';
 
 // Company Screens
 import HomeMenu from '../screens/homeMenu/HomeMenu';
-import Submenu from '../screens/submenu/Submenu';
+import Menu from '../screens/menu/Menu';
 import SendMessage from '../screens/sendMessage/SendMessage';
 import SearchCompany from '../screens/company/search/Search';
 import ProfileCompany from '../screens/company/profile/Profile';
@@ -63,7 +63,7 @@ const privateScreens = {
   // Company
   //Home,
   HomeMenu,
-  Submenu,
+  Menu,
   SendMessage,
   SearchCompany,
   ProfileCompany,
