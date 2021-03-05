@@ -49,8 +49,41 @@ export const Input = (props) => {
 
 }
 /* /Input */
-
 export const InputTextArea = (props) => {
+  let value = props.value;
+
+  validate.type = props.type;
+  validate.min = props.min;
+
+  const InputTextAreaContainer = styled.TextInput`
+    backgroundColor: ${Color.white};
+    color: ${Color.text};
+    padding: 10px 20px;
+    width: 100%;
+    height: 200px;
+    font-size: 20px;
+    border: 1px solid ${Color.gray};
+    border-radius: 5px;
+  `;
+
+  return (
+    <View style={{width: '100%'}}>
+      {props.label ? <Text style={{marginBottom: 10}}>{props.label}</Text> : null}
+      <InputTextAreaContainer
+        multiline
+        numberOfLines={3}
+        defaultValue={value}
+        secureTextEntry={(props.type==='password') ? true : false}
+        placeholder= {props.placeholder}
+        style={validate.styleCheckValueInit(value)}
+        onChange={(event) => { value = event.nativeEvent.text }}
+        onEndEditing={() => props.onChangeText(value)}
+      >
+      </InputTextAreaContainer>
+    </View>
+  )
+}
+export const InputTextAreafff = (props) => {
   const InputTextAreaContainer = styled.TextInput`
     backgroundColor: #FFFFFF;
     color: #222222;

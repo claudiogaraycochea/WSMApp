@@ -1,5 +1,5 @@
-import React from 'react';
-import { Text } from 'react-native';
+import React, { useState, useCallback } from 'react';
+import { Text, Linking, TextInput } from 'react-native';
 import {
   Container,
   Row,
@@ -15,7 +15,26 @@ import {
 export default function SendMessage(props) {
   const { navigation, route } = props;
   const { data_selected } = route.params;
+  const [ message, setMessage ] = useState();
 
+  const OpenURLButton = ({ url, children }) => {
+
+    const handlePress = useCallback(async () => {
+      const supported = await Linking.canOpenURL(url);
+  
+      if (supported) {
+        await Linking.openURL(url);
+      } else {
+        Alert.alert(`Don't know how to open this URL: ${url}`);
+      }
+    }, [url]);
+  
+    return <Button variant='primary' onPress={handlePress}>Send message</Button>;
+  };
+
+  const message_encoded = encodeURI(message);
+  const link_whatsapp = `https://wa.me/${data_selected.whatsapp}?text=${message_encoded}`;
+  
   return (
     <Container>
       <Row type='divisor'>
@@ -24,7 +43,12 @@ export default function SendMessage(props) {
         </Col>
       </Row>
       <Row>
-        <InputTextArea placeholder="Send us a message"/>
+        <InputTextArea
+          type='text'
+          value={message}
+          placeholder='Message'
+          onChangeText={(text)=> setMessage(text)}
+        />
       </Row>
       <Row>
         <Button
@@ -36,17 +60,10 @@ export default function SendMessage(props) {
         </Button>
       </Row>
       <Row>
-        <Text>Whatsapp and Email</Text>
+        <Text>Whatsapp</Text>
       </Row>
       <Row>
-        <Button
-          variant='primary'
-          onPress={() =>
-            navigation.navigate('Login')
-          }
-        >
-          Send Message
-        </Button>
+        <OpenURLButton url={link_whatsapp}/>
       </Row>
     </Container>
   )

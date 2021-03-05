@@ -8,11 +8,11 @@ export default function Main(props) {
   const { auth } = useSelector(state => state.userConstructor);
   const isLoggedIn = auth.AccessToken;
 
-  return (
+  /*return (
     <>
       <NavigationPrivate props={props}/>
     </>
-  )
+  )*/
 
   return (
     <>
