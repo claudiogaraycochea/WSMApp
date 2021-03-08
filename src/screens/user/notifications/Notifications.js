@@ -14,40 +14,33 @@ import {
 } from '../../../../src/ui/UILib';
 import styled, { css } from 'styled-components';
 
-class NotificationsUser extends Component {
-  constructor(){
-    super();
-    this.state = {}
-  }
-
-  render() {
-    const { navigation } = this.props;
-    return (
-      <Container>
-        <Row type='divisor'>
-          <Col align='flex-start'>
-            <H3>New comment</H3>
-            <Text>02/01/2020</Text>
-            <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.</Text>
-          </Col>
-        </Row>
-        <Row type='divisor'>
-          <Col align='flex-start'>
-            <H3>Customer has visited</H3>
-            <Text>02/01/2020</Text>
-            <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.</Text>
-          </Col>
-        </Row>
-        <Row type='divisor'>
-          <Col align='flex-start'>
-            <H3>Completed a review</H3>
-            <Text>02/01/2020</Text>
-            <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.</Text>
-          </Col>
-        </Row>
-      </Container>
-    )
-  }
+export default function NotificationsUser(props) {
+  const { navigation } = this.props;
+  return (
+    <Container>
+      <Row type='divisor'>
+        <Col align='flex-start'>
+          <H3>PAYMENT THERAPY</H3>
+          <Text>02/01/2020</Text>
+          <Text>You have a new payment link https://business.revolut.com .</Text>
+        </Col>
+      </Row>
+      <Row type='divisor'>
+        <Col align='flex-start'>
+          <H3>PAYMENT MASSAGE</H3>
+          <Text>02/01/2020</Text>
+          <Text>You have a new payment link https://business.revolut.com .</Text>
+        </Col>
+      </Row>
+      <Row type='divisor'>
+        <Col align='flex-start'>
+          <H3>PAYMENT THERAPY</H3>
+          <Text>02/01/2020</Text>
+          <Text>You have a new payment link https://business.revolut.com .</Text>
+        </Col>
+      </Row>
+    </Container>
+  )
 };
 
 export default (NotificationsUser);
