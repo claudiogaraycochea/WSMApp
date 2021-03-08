@@ -51,9 +51,22 @@ export const Container = (props) => {
 ///////////////////////////
 /* Section */
 
-export const Section = styled.View`
-  margin-bottom: 20px;
-`;
+export const Section = (props) => {
+
+  const SectionContainer = styled.View`
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+  `;
+
+  return (
+    <SectionContainer style={props.style}>
+      {props.children}
+    </SectionContainer>
+  )
+}
+
 
 ///////////////////////////
 /* Row */
@@ -199,8 +212,8 @@ export const ImageUser = (props) => {
   if (props.image) {
     return (
       <ImageUserContainer 
-        style={{width: size, height: size, borderRadius: 50}}
-        imageStyle={{ borderRadius: 50}}
+        style={{width: size, height: size, borderRadius: 100}}
+        imageStyle={{ borderRadius: 100}}
         resizeMode='cover'
         source={{uri: props.image}}
       >

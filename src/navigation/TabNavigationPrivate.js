@@ -27,26 +27,6 @@ const TabNavigatorPrivate = () => {
         }}
       />
       <Tab.Screen
-        name="Heart"
-        component={NotificationsStackNavigator}
-        options={{
-          tabBarLabel: "Heart",
-          tabBarIcon: () => (
-            <Icon.IconHotkeyHeart/>
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="discount"
-        component={NotificationsStackNavigator}
-        options={{
-          tabBarLabel: "Discounts",
-          tabBarIcon: () => (
-            <Icon.IconHotkeyDiscount/>
-          ),
-        }}
-      />
-      <Tab.Screen
         name="notifications"
         component={NotificationsStackNavigator} 
         options={{
