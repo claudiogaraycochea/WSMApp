@@ -15,9 +15,12 @@ import {
 import styled, { css } from 'styled-components';
 
 export default function NotificationsUser(props) {
-  const { navigation } = this.props;
+  const { navigation } = props;
   return (
     <Container>
+      <Row>
+        <H3>NOTIFICATIONS</H3>
+      </Row>
       <Row type='divisor'>
         <Col align='flex-start'>
           <H3>PAYMENT THERAPY</H3>
@@ -42,5 +45,3 @@ export default function NotificationsUser(props) {
     </Container>
   )
 };
-
-export default (NotificationsUser);

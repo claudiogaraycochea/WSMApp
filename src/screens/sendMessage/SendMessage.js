@@ -43,6 +43,9 @@ export default function SendMessage(props) {
         </Col>
       </Row>
       <Row>
+        
+      </Row>
+      <Row>
         <InputTextArea
           type='text'
           value={message}
