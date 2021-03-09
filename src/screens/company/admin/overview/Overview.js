@@ -16,84 +16,29 @@ class AdminOverviewCompany extends Component {
     const { navigation } = this.props;
     return (
       <Container>
-        <Row type='divisor'>
-          <Col>
-            <Text>Customers</Text>
-            <H2>20,000</H2>
-          </Col>
-          <Col>
-            <Text>Comments</Text>
-            <H2>430</H2>
-          </Col>
-          <Col>
-            <Text>Visitor</Text>
-            <H2>40,000</H2>
-          </Col>
-        </Row>
         <Row>
-          <H3>EDIT PROFILE</H3>
+          <H3>ADMIN COMPANY</H3>
         </Row>
         <ButtonItems>
           <ButtonItem
             icon={<Icon.IconSurvey/>}
             onPress={() =>
-              navigation.navigate('EditGeneralCompany')
+              navigation.navigate('EditMenuCompany')
             }
             iconAction={<Icon.IconEdit/>}
           >
-            General
+            Edit menu
           </ButtonItem>
-          {/*<ButtonItem
+          <ButtonItem
             icon={<Icon.IconSurvey/>}
             onPress={() =>
-              navigation.navigate('EditVideoCompany')
+              navigation.navigate('SendNotificationCompany')
             }
             iconAction={<Icon.IconEdit/>}
           >
-            Video
-          </ButtonItem>*/}
+            Send notification
+          </ButtonItem>
         </ButtonItems>
-        <Row>
-          <H3>EDIT ITEMS</H3>
-        </Row>
-        <View>
-          <ButtonItem
-            icon={<Icon.IconSurvey/>}
-            onPress={() =>
-              navigation.navigate('CreateSurveyCompany')
-            }
-            iconAction={<Icon.IconEdit/>}
-          >
-            Survey
-          </ButtonItem>
-          <ButtonItem
-            icon={<Icon.IconSurvey/>}
-            onPress={() =>
-              navigation.navigate('EditScanQRCodeCompany')
-            }
-            iconAction={<Icon.IconEdit/>}
-          >
-            Scan QR Code
-          </ButtonItem>
-          <ButtonItem
-            icon={<Icon.IconSurvey/>}
-            onPress={() =>
-              navigation.navigate('EditReviewCompany')
-            }
-            iconAction={<Icon.IconEdit/>}
-          >
-            Review
-          </ButtonItem>
-          <ButtonItem
-            icon={<Icon.IconSurvey/>}
-            onPress={() =>
-              navigation.navigate('EditInviteFriendCompany')
-            }
-            iconAction={<Icon.IconEdit/>}
-          >
-            Invite a friend
-          </ButtonItem>
-        </View>
       </Container>
     )
   }

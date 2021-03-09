@@ -7,7 +7,7 @@ import getStore from './src/store/config/store';
 import Main from './src/navigation/Main';
 
 // Remove Yellow Notifications
-LogBox.ignoreAllLogs('');
+LogBox.ignoreAllLogs(true);
 
 let store = getStore();
 

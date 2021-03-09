@@ -1,12 +1,13 @@
 import React from 'react';
 import { View } from 'react-native';
-import { Container, Row, H2, ButtonItems, ButtonItem, Icon } from '../../../src/ui/UILib';
+import { Container, Row, H2, ButtonItems, ButtonItem, Icon, ButtonBottom, Color } from '../../../src/ui/UILib';
 import { useSelector, useDispatch } from 'react-redux';
 import { setMenuId } from '../../store/actions/menuActions';
 
 export default function HomeMenu(props){
   const { navigation } = props;
   const { menu } = useSelector(state => state.menuConstructor);
+  const company_own = true;
   const dispatch = useDispatch();
 
   function handleChooseMenu(menu_id) {
@@ -21,7 +22,16 @@ export default function HomeMenu(props){
   }
 
   return (
-    <Container>
+    <Container
+      bottom={(company_own) ? (
+        <ButtonBottom
+          icon={(<Icon.IconHotkeySettings color={Color.white}/>)}
+          onPress={() => navigation.navigate('AdminOverviewCompany')}
+        >
+          Admin my company
+        </ButtonBottom>) : null
+      }
+    >
       <Row>
         <H2>WELCOME!</H2>
       </Row>

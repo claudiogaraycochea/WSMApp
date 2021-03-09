@@ -29,7 +29,8 @@ import InviteFriendCompany from '../screens/company/section/inviteFriend/InviteF
 // Company Admin
 import CreateCompany from '../screens/company/admin/create/CreateCompany';
 import AdminOverviewCompany from '../screens/company/admin/overview/Overview';
-import EditGeneralCompany from '../screens/company/admin/general/editGeneral/EditGeneral';
+import EditMenuCompany from '../screens/company/admin/editMenu/EditMenu';
+import SendNotificationCompany from '../screens/company/admin/sendNotification/SendNotification';
 import EditVideoCompany from '../screens/company/admin/video/editVideo/EditVideo';
 
 // Company Admin Section
@@ -77,7 +78,8 @@ const privateScreens = {
   // Company Admin
     CreateCompany,
     AdminOverviewCompany,
-    EditGeneralCompany,
+    EditMenuCompany,
+    SendNotificationCompany,
     EditVideoCompany,
   // Company Admin Section
     CreateSurveyCompany,
