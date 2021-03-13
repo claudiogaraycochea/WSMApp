@@ -9,7 +9,7 @@ export default function SignUp (props) {
   const dispatch = useDispatch();
   const [is_enabled, setIsEnabled] = useState(false);
   const [role, setRole] = useState('customer');
-  const [firstname, setFirstname] = useState();
+  const [name, setFirstname] = useState();
   const [lastname, setLastname] = useState();
   const [email, setEmail] = useState(); 
   const [password, setPassword] = useState();
@@ -73,8 +73,8 @@ export default function SignUp (props) {
         </Row>
         <Row>
           <Input
-            label='Firstname'
-            value={firstname}
+            label='Name'
+            value={name}
             placeholder='Firstname'
             onChangeText={(text)=> setFirstname(text)}
             min={3}
@@ -82,12 +82,112 @@ export default function SignUp (props) {
         </Row>
         <Row>
           <Input
-            label='Lastname'
+            label='Surname'
             value={lastname}
             placeholder='Lastname'
             onChangeText={(text)=> setLastname(text)}
             min={3}
           />
+        </Row>
+        <Row>
+          <Input
+            label='Address'
+            value={lastname}
+            placeholder='Lastname'
+            onChangeText={(text)=> setLastname(text)}
+            min={3}
+          />
+        </Row>
+        <Row>
+          <Input
+            label='Telephone Number'
+            value={lastname}
+            placeholder='Telephone Number'
+            onChangeText={(text)=> setLastname(text)}
+            min={3}
+          />
+        </Row>
+        <Row>
+          <Input
+            label='Date of birdh'
+            value={lastname}
+            placeholder='Date of Bird'
+            onChangeText={(text)=> setLastname(text)}
+            min={3}
+          />
+        </Row>
+        <Row>
+          <Input
+            label='Height'
+            value={lastname}
+            placeholder='Height'
+            onChangeText={(text)=> setLastname(text)}
+            min={3}
+          />
+        </Row>
+        <Row>
+          <Input
+            label='Position'
+            value={lastname}
+            placeholder='Position'
+            onChangeText={(text)=> setLastname(text)}
+            min={3}
+          />
+        </Row>
+        <Row>
+          <Input
+            label='Foot'
+            value={lastname}
+            placeholder='Foot'
+            onChangeText={(text)=> setLastname(text)}
+            min={3}
+          />
+        </Row>
+        <Row>
+          <Input
+            label='Club'
+            value={lastname}
+            placeholder='Club'
+            onChangeText={(text)=> setLastname(text)}
+            min={3}
+          />
+        </Row>
+        <Row>
+          <Input
+            label='Outfitter'
+            value={lastname}
+            placeholder='Outfitter'
+            onChangeText={(text)=> setLastname(text)}
+            min={3}
+          />
+        </Row>
+        <Row>
+          <Input
+            label='Outfit'
+            value={lastname}
+            placeholder='Outfit Measurements'
+            onChangeText={(text)=> setLastname(text)}
+            min={3}
+          />
+        </Row>
+        <Row>
+          <Input
+            label='Social Media Accounts'
+            value={lastname}
+            placeholder='Social Media Accounts'
+            onChangeText={(text)=> setLastname(text)}
+            min={3}
+          />
+        </Row>
+        <Row>
+          <Button>
+            Upload passeport
+          </Button>
+        </Row>
+        <Row>
+          <Button>
+            Upload Driver License
+          </Button>
         </Row>
         <Row>
           <Input
