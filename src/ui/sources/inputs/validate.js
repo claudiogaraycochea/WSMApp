@@ -44,7 +44,7 @@ export default validate = {
     if(inputValuation === 'success') {
       return {borderColor: Color.green}
     }
-    return {borderColor: Color.gray}
+    return {borderColor: Color.text}
   }  
 }
 

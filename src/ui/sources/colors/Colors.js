@@ -8,7 +8,7 @@ export const Color = {
   primary: '#bba98a', //'#A915CE', // violet
   secondary: 'red',
   normal: '#0b0b0b',//'#ffffff',
-  grayHighlight: '#E5E5E5',
+  grayHighlight: '#464646',
   inputBackground: '#1f1f1f',
   singleBackground: '#0b0b0b',
   dark: '#0b0b0b',

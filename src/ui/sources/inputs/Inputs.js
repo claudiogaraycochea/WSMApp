@@ -29,7 +29,8 @@ export const Input = (props) => {
     padding: 10px 20px;
     width: 100%;
     font-size: 20px;
-    border: 1px solid ${Color.gray};
+    borderColor: ${Color.text};
+    borderWidth: 1;
     border-radius: 5px;
   `;
 
@@ -40,6 +41,7 @@ export const Input = (props) => {
         defaultValue={value}
         secureTextEntry={(props.type==='password') ? true : false}
         placeholder= {props.placeholder}
+        placeholderTextColor={Color.grayHighlight}
         style={validate.styleCheckValueInit(value)}
         onChange={(event) => { value = event.nativeEvent.text }}
         onEndEditing={() => props.onChangeText(value)}
@@ -61,9 +63,10 @@ export const InputTextArea = (props) => {
     color: ${Color.text};
     padding: 10px 20px;
     width: 100%;
-    height: 200px;
+    height: 100px;
     font-size: 20px;
-    border: 1px solid ${Color.gray};
+    borderColor: ${Color.text};
+    borderWidth: 1px;
     border-radius: 5px;
   `;
 
@@ -76,6 +79,7 @@ export const InputTextArea = (props) => {
         defaultValue={value}
         secureTextEntry={(props.type==='password') ? true : false}
         placeholder= {props.placeholder}
+        placeholderTextColor={Color.grayHighlight}
         style={validate.styleCheckValueInit(value)}
         onChange={(event) => { value = event.nativeEvent.text }}
         onEndEditing={() => props.onChangeText(value)}

@@ -1,7 +1,7 @@
 export const menu = [
   { 
     id: 1,
-    title: 'Appoiments',
+    title: 'Appointments',
     menu: [
       {
         id: 1,
@@ -284,12 +284,60 @@ export const menu = [
           {
             id: 4,
             title: 'Activities',
-            data: {
-              firstname: 'Samuel',
-              lastname: 'Tompson',
-              email: 'medical@email.com',
-              whatsapp: '+34932209092'
-            }
+            menu: [
+              {
+                id: 1,
+                title: 'Daylife',
+                menu: [
+                  {
+                    id: 1,
+                    title: 'Beach Clubs',
+                    data: {
+                      firstname: 'Samuel',
+                      lastname: 'Tompson',
+                      email: 'medical@email.com',
+                      whatsapp: '+34932209092'
+                    }
+                  },
+                  {
+                    id: 2,
+                    title: 'Excursions',
+                    data: {
+                      firstname: 'Samuel',
+                      lastname: 'Tompson',
+                      email: 'medical@email.com',
+                      whatsapp: '+34932209092'
+                    }
+                  }
+                ]
+              },
+              {
+                id: 2,
+                title: 'Nightlife',
+                menu: [
+                  {
+                    id: 1,
+                    title: 'Nightclubs',
+                    data: {
+                      firstname: 'Samuel',
+                      lastname: 'Tompson',
+                      email: 'medical@email.com',
+                      whatsapp: '+34932209092'
+                    }
+                  },
+                  {
+                    id: 2,
+                    title: 'Bars',
+                    data: {
+                      firstname: 'Samuel',
+                      lastname: 'Tompson',
+                      email: 'medical@email.com',
+                      whatsapp: '+34932209092'
+                    }
+                  }
+                ]
+              },
+            ]
           }
         ]
       },
