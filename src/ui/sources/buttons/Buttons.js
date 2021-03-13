@@ -183,7 +183,7 @@ export const ButtonItem = (props) => {
     margin-left: -20px;
     margin-right: -20px;
     position: relative;
-    borderTopColor: ${Color.grayHighlight};
+    borderTopColor: ${Color.divisorLine};
     borderTopWidth: 1px;
     padding: 10px 20px;
   `;
@@ -282,9 +282,9 @@ export const ButtonBottom = (props) => {
     margin-right: -20px;
     margin-bottom: -10px;
     position: relative;
-    borderTopColor: ${Color.grayHighlight};
-    backgroundColor: ${Color.violet};
+    backgroundColor: ${Color.singleBackground};
     color: ${Color.white};
+    borderTopColor: ${Color.divisorLine};
     borderTopWidth: 1px;
     padding: 10px 20px;
   `;

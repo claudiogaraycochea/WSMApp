@@ -23,7 +23,7 @@ export const Input = (props) => {
   validate.min = props.min;
 
   const InputContainer = styled.TextInput`
-    backgroundColor: ${Color.white};
+    backgroundColor: ${Color.inputBackground};
     color: ${Color.text};
     padding: 10px 20px;
     width: 100%;
@@ -56,7 +56,7 @@ export const InputTextArea = (props) => {
   validate.min = props.min;
 
   const InputTextAreaContainer = styled.TextInput`
-    backgroundColor: ${Color.white};
+    backgroundColor: ${Color.inputBackground};
     color: ${Color.text};
     padding: 10px 20px;
     width: 100%;
@@ -81,25 +81,6 @@ export const InputTextArea = (props) => {
       >
       </InputTextAreaContainer>
     </View>
-  )
-}
-export const InputTextAreafff = (props) => {
-  const InputTextAreaContainer = styled.TextInput`
-    backgroundColor: #FFFFFF;
-    color: #222222;
-    padding: 10px 20px;
-    width: 100%
-    height: 200px;
-    font-size: 20px;
-    border: 1px solid #E5E5E5;
-    border-radius: 5px;
-  `;
-  return (
-    <InputTextAreaContainer
-      multiline
-      numberOfLines={3}
-      placeholder={props.placeholder}
-    ></InputTextAreaContainer>
   )
 }
 
