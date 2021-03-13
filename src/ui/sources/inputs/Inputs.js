@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { View, Text, Switch, StyleSheet, Picker } from 'react-native';
+import { View, Switch, StyleSheet, Picker } from 'react-native';
 import styled, { css } from 'styled-components';
 import { Color } from '../colors/Colors';
+import { Text } from '../texts/Texts';
 import validate from './validate.js';
 
 /* Input 
@@ -68,7 +69,7 @@ export const InputTextArea = (props) => {
 
   return (
     <View style={{width: '100%'}}>
-      {props.label ? <Text style={{marginBottom: 10}}>{props.label}</Text> : null}
+      {props.label ? <Text style={{marginBottom: 10, color: '#ffffff'}}>{props.label}</Text> : null}
       <InputTextAreaContainer
         multiline
         numberOfLines={3}

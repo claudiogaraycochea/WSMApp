@@ -1,10 +1,11 @@
 import React, { useState, useCallback } from 'react';
-import { Text, Linking, TextInput } from 'react-native';
+import { Linking, TextInput } from 'react-native';
 import {
   Container,
   Row,
   Col,
   H3,
+  Text,
   TopCompany,
   ImageUser,
   ImageCompany,

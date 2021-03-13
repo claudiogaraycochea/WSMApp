@@ -10,7 +10,7 @@ export default function Header (props) {
         justifyContent: 'space-between',
       }}
     >
-      <Text style={{fontWeight: 'bold'}}>{props.title}</Text>
+      <Text style={{fontWeight: 'bold', color: 'white'}}>{props.title}</Text>
     </View>
   )
 }

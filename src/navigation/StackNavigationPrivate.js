@@ -8,10 +8,20 @@ import Home from '../screens/home/Home';
 import NotificationsUser from '../screens/user/notifications/Notifications';
 import { Icon, ButtonIcon } from '../ui/UILib';
 import HeaderUserImage from '../components/header/headerUserImage/HeaderUserImage';
+import { Color } from '../ui/UILib';
 
 const Stack = createStackNavigator();
 
 const singleScreenOptions = ({ navigation }) => ({
+  headerStyle: {
+    height: 75,
+    paddingTop: 10,
+    backgroundColor: Color.dark,
+    shadowRadius: 0,
+    shadowOffset: {
+      height: 0,
+    },
+  },
   headerTitle: props => <Header title={'WSM | AGENCY'} />,
   headerRight: () => (
     <ButtonIcon
@@ -23,6 +33,15 @@ const singleScreenOptions = ({ navigation }) => ({
 });
 
 const screenOptions = ({ navigation }) => ({
+  headerStyle: {
+    height: 75,
+    paddingTop: 10,
+    backgroundColor: Color.dark,
+    shadowRadius: 0,
+    shadowOffset: {
+      height: 0,
+    },
+  },
   headerTitle: props => <Header title={'WSM | AGENCY'} />,
   headerLeft: props => <ButtonIcon onPress={() => navigation.goBack()}><Icon.IconBack/></ButtonIcon>,
   headerRight: () => (

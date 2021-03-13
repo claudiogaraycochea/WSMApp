@@ -5,9 +5,9 @@ export const Color = {
   accent: '#bba98a', //'#ffffff',
   highlight: '#FF144D',
   contrast: '#222222',
-  primary: '#1f1f1f', //'#A915CE', // violet
+  primary: '#bba98a', //'#A915CE', // violet
   secondary: 'red',
-  normal: '#bba98a',//'#ffffff',
+  normal: '#0b0b0b',//'#ffffff',
   grayHighlight: '#E5E5E5',
   inputBackground: '#1f1f1f',
   singleBackground: '#0b0b0b',

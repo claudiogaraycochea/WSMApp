@@ -19,7 +19,7 @@ const getBgColor = (variant) => {
 const getTextColor = (variant) => {
   switch(variant) {
     case 'primary':
-      return Color.white
+      return Color.dark
     default:
       return Color.white
   }
@@ -30,7 +30,7 @@ export const Button = (props) => {
     background-color: ${props => (props.variant) ? getBgColor(props.variant) : Color.normal};
     padding: 6px 20px;
     width: 100%;
-    border-color: ${props => (props.variant) ? getTextColor(props.variant) : Color.primary};
+    border-color: ${props => (props.variant) ? getTextColor(props.variant) : Color.normal};
     border-radius: 5px;
     border-width: 1px;
     align-self: center;
