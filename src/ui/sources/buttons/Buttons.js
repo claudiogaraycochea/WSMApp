@@ -198,12 +198,18 @@ export const ButtonItem = (props) => {
     display: flex;
     flex-direction: row;
     align-items: center;
+    width: 100%;
+    padding-right: 100px;
   `
 
   const ButtonItemRight = styled.View`
     display: flex;
     flex-direction: row;
     align-items: center;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    top: 0;
   `
 
   const ButtonItemLabelImage = styled.View`
@@ -214,7 +220,8 @@ export const ButtonItem = (props) => {
 
   const ButtonItemLabel = styled.Text`
     font-weight: 700;
-    font-size: 16px;
+    font-size: 20px;
+    textTransform: uppercase;
     color: ${Color.text};
   `
 

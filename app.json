@@ -3,6 +3,7 @@
     "name": "WSMApp",
     "slug": "WSMApp",
     "version": "1.0.0",
+    "owner": "wsmapp",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {

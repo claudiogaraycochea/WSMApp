@@ -2,6 +2,19 @@ export const menu = [
   { 
     id: 1,
     title: 'Appointments',
+    data: {
+      firstname: 'Samuel',
+      lastname: 'Tompson',
+      whatsapp: '+34932209092',
+      email: 'medical@email.com'
+    }
+  }
+];
+/*
+export const menu = [
+  { 
+    id: 1,
+    title: 'Appointments',
     menu: [
       {
         id: 1,
@@ -596,3 +609,4 @@ export const menu = [
     ]
   }
 ];
+*/

@@ -18,7 +18,7 @@ const NoneScreenOptions= {
 const screenOptions = ({ navigation }) => ({
   headerStyle: {
     height: 75,
-    paddingTop: 10,
+    // paddingTop: 10,
     backgroundColor: Color.dark,
     shadowRadius: 0,
     shadowOffset: {

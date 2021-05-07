@@ -19,7 +19,7 @@ export default function NotificationsUser(props) {
   return (
     <Container>
       <Row>
-        <H3>NOTIFICATIONS</H3>
+        <H2>NOTIFICATIONS</H2>
       </Row>
       <Row type='divisor'>
         <Col align='flex-start'>

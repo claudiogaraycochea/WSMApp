@@ -14,6 +14,7 @@ import IconSearch from './IconSearch';
 import IconHeaderUser from './IconHeaderUser';
 import IconBack from './IconBack';
 import IconNext from './IconNext';
+import IconCalendar from './IconCalendar';
 
 export const Icon = {
   IconLogo,
@@ -31,4 +32,5 @@ export const Icon = {
   IconHeaderUser: IconHeaderUser,
   IconBack: IconBack,
   IconNext: IconNext,
+  IconCalendar: IconCalendar,
 }

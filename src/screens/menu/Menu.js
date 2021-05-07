@@ -30,7 +30,7 @@ export default function Menu(props){
   return (
     <Container>
       <Row>
-        <H2>MENU {prev_title}</H2>
+        <H2>{prev_title}</H2>
       </Row>
       <View>
         {menu_selected.map((menu_item) => {

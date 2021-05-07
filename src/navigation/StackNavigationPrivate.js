@@ -6,6 +6,7 @@ import { privateScreens, privateScreensTitle } from './Routes';
 import Header from '../components/header/Header';
 import Home from '../screens/home/Home';
 import NotificationsUser from '../screens/user/notifications/Notifications';
+import CalendarUser from '../screens/user/calendar/Calendar';
 import { Icon, ButtonIcon } from '../ui/UILib';
 import HeaderUserImage from '../components/header/headerUserImage/HeaderUserImage';
 import { Color } from '../ui/UILib';
@@ -15,7 +16,7 @@ const Stack = createStackNavigator();
 const singleScreenOptions = ({ navigation }) => ({
   headerStyle: {
     height: 75,
-    paddingTop: 10,
+    // paddingTop: 10,
     backgroundColor: Color.dark,
     shadowRadius: 0,
     shadowOffset: {
@@ -35,7 +36,7 @@ const singleScreenOptions = ({ navigation }) => ({
 const screenOptions = ({ navigation }) => ({
   headerStyle: {
     height: 75,
-    paddingTop: 10,
+    //paddingTop: 10,
     backgroundColor: Color.dark,
     shadowRadius: 0,
     shadowOffset: {
@@ -85,4 +86,16 @@ const NotificationsStackNavigator = () => {
   );
 }
 
-export { MainStackNavigator, NotificationsStackNavigator };
+const CalendarStackNavigator = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="CalendarUser"
+        options={singleScreenOptions} 
+        component={CalendarUser}
+      />
+    </Stack.Navigator>
+  );
+}
+
+export { MainStackNavigator, NotificationsStackNavigator, CalendarStackNavigator };
