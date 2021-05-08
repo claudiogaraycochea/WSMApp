@@ -1,4 +1,4 @@
-export const menu = [
+/*export const menu = [
   { 
     id: 1,
     title: 'Appointments',
@@ -9,8 +9,7 @@ export const menu = [
       email: 'medical@email.com'
     }
   }
-];
-/*
+];*/
 export const menu = [
   { 
     id: 1,
@@ -609,4 +608,3 @@ export const menu = [
     ]
   }
 ];
-*/
