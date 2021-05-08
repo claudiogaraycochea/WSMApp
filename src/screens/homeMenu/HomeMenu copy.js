@@ -6,19 +6,15 @@ import { setMenuId } from '../../store/actions/menuActions';
 import { db } from '../../store/firestore/Firestore';
 import base64 from 'react-native-base64';
 
-import { collection, query, where } from "firebase/firestore";
-
-
 export default function HomeMenu(props){
   const { navigation } = props;
-  // const { menu } = useSelector(state => state.menuConstructor);
+  const { menu } = useSelector(state => state.menuConstructor);
   const [company, setCompany] = useState(null);
-  //let menu = [];
   // const company_own = true;
-  const [menu, setMenu] = useState([]);
   const dispatch = useDispatch();
+  let menu = [];
 
-  /*const getUsersAutoUpdate = async () => {
+  const getUsersAutoUpdate = async () => {
     db.collection('menu').onSnapshot((querySnapshot) => {
       const docs = [];
       querySnapshot.forEach(doc=>{
@@ -28,17 +24,16 @@ export default function HomeMenu(props){
       });
       setCompany(docs);
     });
-  }*/
-
+  }
+ 
   useEffect(()=>{
-    if(menu.length===0) {
-      getMenu('123')
-    }
+    
   }, []);
+getMenu('123');
 
   function handleChooseMenu(menu_id) {
     const menu_parent = menu.find((menuItem) => menuItem.id === menu_id);
-    console.log('handleChooseMenu: menu_selected:', menu_parent);
+    // console.log('handleChooseMenu: menu_selected:', menu_parent);
     const menu_child = menu_parent.menu;
     const params = {
       menu_selected: menu_child,
@@ -47,44 +42,38 @@ export default function HomeMenu(props){
     navigation.navigate('Menu', params);
   }
 
-  const handleCreateSubmit = async () => {
-    console.log('handleCreateSubmit')
-    console.log('menu',menu);
-    const data = {
-      menu,
-      user_id: '123'
+  if(company===null) {
+    return (<Row><Text>Loading</Text></Row>)
+  }
+
+
+  if((company!==null) && menu.length===0) {
+    /*const menuEncoded = base64.encode(JSON.stringify(menu));
+    console.log("encode: ", menuEncoded);
+    const menuDecoded = base64.decode(menuEncoded);
+    console.log('decode: ', menuDecoded)*/
+    const menuResult = (company!==null) ? JSON.parse(base64.decode(company[0].data)):[];
+    // console.log('company[0].data: ',menuResult);
+    menu=menuResult;
+  }
+
+  const handleCreateSubmit = () => {
+    const initialStateValues = {
+      firstname: 'bbb',
+      lastname: 'hhh'
     };
-    await db.collection('menu').doc().set(data);
+    console.log('values: ', initialStateValues);
+    db.collection('menu').doc().set(initialStateValues);
+    console.log('new user added');
+    //setValues({...initialStateValues});
   }
 
-  const getMenu = async (user_id) => {
-    db.collection('menu').onSnapshot((querySnapshot) => {
-      const docs = [];
-      querySnapshot.forEach(doc=>{
-        if(doc.data().user_id === user_id) {
-          docs.push({...doc.data(), id: doc.id});
-        }
-        // console.log(doc.id);
-        //docs.push({...doc.data(), id: doc.id});
-      });
-      //console.log('docs:',docs);
-      setMenu(docs[0].menu);
-    });
+  const getMenu = (user_id) => {
+    console.log('getMenu: user_id: ', user_id);
+    firebase.database().ref('menu/' + user_id).once("value", snap => {
+      console.log(snap.val())
+    })
   }
-
-  /*return (
-    <View>
-      <Row><Text>Loading</Text></Row>
-      <Row>
-        <Button onPress={()=>handleCreateSubmit()}>Set deviceggg</Button>
-      </Row>
-      <Row>
-        <Button onPress={()=>handleGetMenu('123')}>Get Menu</Button>
-      </Row>
-    </View>
-  )*/
-
-  console.log(menu);
 
   return (
     <Container
@@ -101,7 +90,7 @@ export default function HomeMenu(props){
         <H2>WELCOME!</H2>
       </Row>
       <View>
-        {(menu.length>0) ? (menu.map((menu_item) => {
+        {menu.map((menu_item) => {
           return (
             <ButtonItem
               key={menu_item.id}
@@ -112,7 +101,10 @@ export default function HomeMenu(props){
               {menu_item.title}
             </ButtonItem>
           )
-        }) ): null}
+        })}
+      </View>
+      <View>
+        <Button onPress={()=>handleCreateSubmit()}>Open Button</Button>
       </View>
     </Container>
   )

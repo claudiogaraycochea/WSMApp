@@ -1,7 +1,7 @@
 // Stack Navigation
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
-import { ButtonIcon, Icon } from '../ui/UILib';
+import { ButtonIcon, Icon, Color } from '../ui/UILib';
 import { authScreens, privateScreensTitle } from './Routes';
 
 import Header from "../components/header/Header";
@@ -16,6 +16,15 @@ const NoneScreenOptions= {
 };
 
 const screenOptions = ({ navigation }) => ({
+  headerStyle: {
+    height: 75,
+    // paddingTop: 10,
+    backgroundColor: Color.dark,
+    shadowRadius: 0,
+    shadowOffset: {
+      height: 0,
+    },
+  },
   headerTitle: props => <Header title={'WSM | AGENCY'} />,
   headerLeft: props => <ButtonIcon onPress={() => navigation.goBack()}><Icon.IconBack/></ButtonIcon>,
 });

@@ -2,10 +2,8 @@
 
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-
-import { MainStackNavigator, NotificationsStackNavigator } from "./StackNavigationPrivate";
-
-import { Icon } from '../ui/UILib';
+import { MainStackNavigator, NotificationsStackNavigator, CalendarStackNavigator } from "./StackNavigationPrivate";
+import { Icon, Color } from '../ui/UILib';
 
 const Tab = createBottomTabNavigator();
 
@@ -27,6 +25,16 @@ const TabNavigatorPrivate = () => {
         }}
       />
       <Tab.Screen
+        name="Calendar"
+        component={CalendarStackNavigator}
+        options={{
+          tabBarLabel: "Calendar",
+          tabBarIcon: () => (
+            <Icon.IconCalendar/>
+          ),
+        }}
+      /> 
+      <Tab.Screen
         name="notifications"
         component={NotificationsStackNavigator} 
         options={{
@@ -43,10 +51,13 @@ const TabNavigatorPrivate = () => {
 export default TabNavigatorPrivate;
 
 const tabBarOptions = {
-  activeTintColor: '#222222',
+  activeTintColor: Color.text,
   style: {
     height: 75,
-    paddingTop: 10
+    // paddingTop: 10,
+    backgroundColor: Color.dark,
+    borderTopColor: Color.divisorLine,
+    borderTopWidth: '1px',
   },
   labelStyle: {
     fontSize: 14,

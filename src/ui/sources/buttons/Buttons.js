@@ -19,7 +19,7 @@ const getBgColor = (variant) => {
 const getTextColor = (variant) => {
   switch(variant) {
     case 'primary':
-      return Color.white
+      return Color.dark
     default:
       return Color.white
   }
@@ -30,7 +30,7 @@ export const Button = (props) => {
     background-color: ${props => (props.variant) ? getBgColor(props.variant) : Color.normal};
     padding: 6px 20px;
     width: 100%;
-    border-color: ${props => (props.variant) ? getTextColor(props.variant) : Color.primary};
+    border-color: ${props => (props.variant) ? getTextColor(props.variant) : Color.normal};
     border-radius: 5px;
     border-width: 1px;
     align-self: center;
@@ -183,7 +183,7 @@ export const ButtonItem = (props) => {
     margin-left: -20px;
     margin-right: -20px;
     position: relative;
-    borderTopColor: ${Color.grayHighlight};
+    borderTopColor: ${Color.divisorLine};
     borderTopWidth: 1px;
     padding: 10px 20px;
   `;
@@ -198,12 +198,18 @@ export const ButtonItem = (props) => {
     display: flex;
     flex-direction: row;
     align-items: center;
+    width: 100%;
+    padding-right: 100px;
   `
 
   const ButtonItemRight = styled.View`
     display: flex;
     flex-direction: row;
     align-items: center;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    top: 0;
   `
 
   const ButtonItemLabelImage = styled.View`
@@ -214,7 +220,8 @@ export const ButtonItem = (props) => {
 
   const ButtonItemLabel = styled.Text`
     font-weight: 700;
-    font-size: 16px;
+    font-size: 20px;
+    textTransform: uppercase;
     color: ${Color.text};
   `
 
@@ -282,9 +289,9 @@ export const ButtonBottom = (props) => {
     margin-right: -20px;
     margin-bottom: -10px;
     position: relative;
-    borderTopColor: ${Color.grayHighlight};
-    backgroundColor: ${Color.violet};
+    backgroundColor: ${Color.singleBackground};
     color: ${Color.white};
+    borderTopColor: ${Color.divisorLine};
     borderTopWidth: 1px;
     padding: 10px 20px;
   `;
