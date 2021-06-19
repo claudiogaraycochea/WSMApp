@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 
 import getStore from './src/store/config/store';
 import Main from './src/navigation/Main';
+import './src/store/firestore/Firestore';
 
 // Remove Yellow Notifications
 LogBox.ignoreAllLogs(true);

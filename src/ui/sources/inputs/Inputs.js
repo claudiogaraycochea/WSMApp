@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { View, Text, Switch, StyleSheet, Picker } from 'react-native';
+import { View, Switch, StyleSheet, Picker } from 'react-native';
 import styled, { css } from 'styled-components';
 import { Color } from '../colors/Colors';
+import { Text } from '../texts/Texts';
 import validate from './validate.js';
 
 /* Input 
@@ -23,12 +24,13 @@ export const Input = (props) => {
   validate.min = props.min;
 
   const InputContainer = styled.TextInput`
-    backgroundColor: ${Color.white};
+    backgroundColor: ${Color.inputBackground};
     color: ${Color.text};
     padding: 10px 20px;
     width: 100%;
     font-size: 20px;
-    border: 1px solid ${Color.gray};
+    borderColor: ${Color.text};
+    borderWidth: 1;
     border-radius: 5px;
   `;
 
@@ -39,6 +41,7 @@ export const Input = (props) => {
         defaultValue={value}
         secureTextEntry={(props.type==='password') ? true : false}
         placeholder= {props.placeholder}
+        placeholderTextColor={Color.grayHighlight}
         style={validate.styleCheckValueInit(value)}
         onChange={(event) => { value = event.nativeEvent.text }}
         onEndEditing={() => props.onChangeText(value)}
@@ -56,50 +59,33 @@ export const InputTextArea = (props) => {
   validate.min = props.min;
 
   const InputTextAreaContainer = styled.TextInput`
-    backgroundColor: ${Color.white};
+    backgroundColor: ${Color.inputBackground};
     color: ${Color.text};
     padding: 10px 20px;
     width: 100%;
-    height: 200px;
+    height: 100px;
     font-size: 20px;
-    border: 1px solid ${Color.gray};
+    borderColor: ${Color.text};
+    borderWidth: 1px;
     border-radius: 5px;
   `;
 
   return (
     <View style={{width: '100%'}}>
-      {props.label ? <Text style={{marginBottom: 10}}>{props.label}</Text> : null}
+      {props.label ? <Text style={{marginBottom: 10, color: '#ffffff'}}>{props.label}</Text> : null}
       <InputTextAreaContainer
         multiline
         numberOfLines={3}
         defaultValue={value}
         secureTextEntry={(props.type==='password') ? true : false}
         placeholder= {props.placeholder}
+        placeholderTextColor={Color.grayHighlight}
         style={validate.styleCheckValueInit(value)}
         onChange={(event) => { value = event.nativeEvent.text }}
         onEndEditing={() => props.onChangeText(value)}
       >
       </InputTextAreaContainer>
     </View>
-  )
-}
-export const InputTextAreafff = (props) => {
-  const InputTextAreaContainer = styled.TextInput`
-    backgroundColor: #FFFFFF;
-    color: #222222;
-    padding: 10px 20px;
-    width: 100%
-    height: 200px;
-    font-size: 20px;
-    border: 1px solid #E5E5E5;
-    border-radius: 5px;
-  `;
-  return (
-    <InputTextAreaContainer
-      multiline
-      numberOfLines={3}
-      placeholder={props.placeholder}
-    ></InputTextAreaContainer>
   )
 }
 

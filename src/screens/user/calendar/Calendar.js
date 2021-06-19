@@ -4,18 +4,17 @@ import {
   Container,
   Row,
   Col,
-  H3,
+  H2,
   Text,
   TopCompany,
   ImageUser,
   ImageCompany,
   InputTextArea,
   Button,
-} from '../../ui/UILib';
+} from '../../../../src/ui/UILib';
 
-export default function SendMessage(props) {
+export default function CalendarUser(props) {
   const { navigation, route } = props;
-  const { data_selected } = route.params;
   const [ message, setMessage ] = useState();
 
   const OpenURLButton = ({ url, children }) => {
@@ -30,41 +29,18 @@ export default function SendMessage(props) {
       }
     }, [url]);
   
-    return <Button variant='primary' onPress={handlePress}>Send message</Button>;
+    return <Button variant='primary' onPress={handlePress}>Open Calendar</Button>;
   };
 
   const message_encoded = encodeURI(message);
-  const link_whatsapp = `https://wa.me/${data_selected.whatsapp}?text=${message_encoded}`;
+  const link_whatsapp = `https://www.google.com/calendar/`;
   
   return (
     <Container>
       <Row type='divisor'>
-        <Col align='flex-start'>
-          <H3>Send to {data_selected.firstname} {data_selected.lastname}</H3>
+        <Col>
+          <H2>CALENDAR</H2>
         </Col>
-      </Row>
-      <Row>
-        
-      </Row>
-      <Row>
-        <InputTextArea
-          type='text'
-          value={message}
-          placeholder='Message'
-          onChangeText={(text)=> setMessage(text)}
-        />
-      </Row>
-      <Row>
-        <Button
-          onPress={() =>
-            navigation.navigate('Login')
-          }
-        >
-          Attach image
-        </Button>
-      </Row>
-      <Row>
-        <Text>Whatsapp</Text>
       </Row>
       <Row>
         <OpenURLButton url={link_whatsapp}/>

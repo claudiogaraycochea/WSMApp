@@ -42,7 +42,7 @@ export default function Login(props) {
   return (
     <Container >
       <Loading visible={loading}/>
-      {(notification) ? <Notification variant={notification.type}>{notification.message}></Notification> : null}
+      {(notification) ? <Notification variant={notification.type}>{notification.message}</Notification> : null}
       <View style={{paddingTop: 80}}>
         <Row>
           <Image 

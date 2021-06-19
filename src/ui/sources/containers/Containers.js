@@ -22,7 +22,7 @@ export const Container = (props) => {
   return (
     <ContainerView
       style={{
-        backgroundColor: '#ffffff',
+        backgroundColor: Color.singleBackground,
       }}
       >
       <ContainerScroll
@@ -77,7 +77,7 @@ export const Row = (props) => {
       flex-direction: row;
       align-items: center;
       justify-content: center;
-      border-bottom-color: ${Color.grayHighlight};
+      border-bottom-color: ${Color.divisorLine};
       padding-left: 20px;
       padding-right: 20px;
       padding-bottom: 20px;

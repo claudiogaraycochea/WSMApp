@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { Text } from 'react-native';
 import {
   Container,
   Row,
   Col,
   H3,
+  Text,
   TopCompany,
   ImageUser,
   ImageCompany,
@@ -29,7 +29,7 @@ export default function SendNotificationCompany(props) {
         <Col align='flex-start'>
           <H3>Firstname Lastname</H3>
           <Text>02/01/2020</Text>
-          <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.</Text>
+          <Text style={{ textAlign: 'left' }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.</Text>
         </Col>
       </Row>
       <Row type='divisor'>
@@ -39,7 +39,7 @@ export default function SendNotificationCompany(props) {
         <Col align='flex-start'>
           <H3>Firstname Lastname</H3>
           <Text>02/01/2020</Text>
-          <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.</Text>
+          <Text style={{ textAlign: 'left' }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.</Text>
         </Col>
       </Row>
       <Row type='divisor'>
@@ -49,7 +49,7 @@ export default function SendNotificationCompany(props) {
         <Col align='flex-start'>
           <H3>Firstname Lastname</H3>
           <Text>02/01/2020</Text>
-          <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.</Text>
+          <Text style={{ textAlign: 'left' }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.</Text>
         </Col>
       </Row>
       <Row>

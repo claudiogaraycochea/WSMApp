@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text } from 'react-native';
+import { Text } from '../../../ui/UILib';
 import {
   Container,
   Row,
@@ -19,27 +19,27 @@ export default function NotificationsUser(props) {
   return (
     <Container>
       <Row>
-        <H3>NOTIFICATIONS</H3>
+        <H2>NOTIFICATIONS</H2>
       </Row>
       <Row type='divisor'>
         <Col align='flex-start'>
           <H3>PAYMENT THERAPY</H3>
           <Text>02/01/2020</Text>
-          <Text>You have a new payment link https://business.revolut.com .</Text>
+          <Text style={{ textAlign: 'left' }}>You have a new payment link https://business.revolut.com .</Text>
         </Col>
       </Row>
       <Row type='divisor'>
         <Col align='flex-start'>
           <H3>PAYMENT MASSAGE</H3>
           <Text>02/01/2020</Text>
-          <Text>You have a new payment link https://business.revolut.com .</Text>
+          <Text style={{ textAlign: 'left' }}>You have a new payment link https://business.revolut.com .</Text>
         </Col>
       </Row>
       <Row type='divisor'>
         <Col align='flex-start'>
           <H3>PAYMENT THERAPY</H3>
           <Text>02/01/2020</Text>
-          <Text>You have a new payment link https://business.revolut.com .</Text>
+          <Text style={{ textAlign: 'left' }}>You have a new payment link https://business.revolut.com .</Text>
         </Col>
       </Row>
     </Container>
