@@ -4,7 +4,6 @@ const initialState = {
     role: 'company'
   },
   firstname: 'Nombre1',
-  user: {},
   users: [
     {uid: 1 ,firstname: 'Tito', email: 'tito@gmail.com'},
     {uid: 2 ,firstname: 'Juan', email: 'juan@gmail.com'}
@@ -22,6 +21,7 @@ export default function userConstructor(state = initialState, action) {
       };
 
     case 'LOGIN_SUCCESS':
+      console.log('LOGIN_SUCCESS: actions: ', action)
       return {
         ...state,
         auth: action.auth,

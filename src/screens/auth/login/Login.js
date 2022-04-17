@@ -1,9 +1,9 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { View, StyleSheet, Image } from 'react-native';
 import { Container, Row, Button, Input, Icon, Notification, Loading } from '../../../../src/ui/UILib';
 import { request, ContentTypes } from '../../../store/apiLib';
 
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { login } from "../../../store/actions/userActions";
 
 export default function Login(props) {
@@ -13,24 +13,33 @@ export default function Login(props) {
   const [password, setPassword] = useState('321Demo$');
   const [loading, setLoading] = useState(false);
   const [notification, setNotification] = useState();
+  const user = useSelector((state) => state.user);
 
   async function handleLoginSubmit() {
     setLoading(true);
     setNotification();
+    console.log('handleLoginSubmit');
     const data = {
-      email,
-      password,
+      email
     };
-    const endpoint = `/user/auth`;
+    const endpoint = `/user/login`;
     try {
-      const res = await request('POST', endpoint, data, { 'content-type': ContentTypes.json });
+      const res = await request('PATCH', endpoint, data, { 'content-type': ContentTypes.json });
+      const { email } = res.data.Item;
+      const userData = {
+        email: email,
+        role: 'company',
+        firstname: 'Claudio',
+        id: '1'
+      }
       const responseData = {
-        auth: res.data.result.Auth,
-        user: res.data.result.User.result
+        auth: {token: '1XXXXXXXX'},
+        user: userData
       }
       console.log(responseData);
       dispatch(login(responseData));
     } catch (err) {
+      console.log(err)
       setLoading(false);
       setNotification({
         type: 'danger',
@@ -38,6 +47,12 @@ export default function Login(props) {
       })
     }
   }
+
+  useEffect(()=>{
+    if(user) {
+      console.log('useEffect: user: ',user);
+    }
+  })
 
   return (
     <Container >

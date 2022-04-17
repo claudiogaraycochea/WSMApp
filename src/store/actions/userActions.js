@@ -2,6 +2,7 @@ import axios from 'axios';
 import { API } from '../config/constants';
 
 export const login = (data) => async dispatch => { 
+  console.log('userActions:',data);
   dispatch({
     type: 'LOGIN_SUCCESS',
     auth: data.auth,
